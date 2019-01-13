@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+// // Customization
+
+// // You can easily customize Bulma with your own variables.
+// // Just uncomment the following block to see the result.
+
+// // 1. Import the initial variables
+// @import "../node_modules/bulma/sass/utilities/initial-variables";
+// @import "../node_modules/bulma/sass/utilities/derived-variables";
+
+// // 2. Set your own initial variables
+
+// // Update the blue shade, used for links
+// $blue: #06bcef;
+// // Add pink and its invert
+// $pink: #ff8080;
+// $pink-invert: #fff;
+// // Update the sans-serif font family
+// $family-sans-serif: "Helvetica", "Arial", sans-serif;
+
+// // 3. Set the derived variables
+// // Use the new pink as the primary color
+// $primary: $pink;
+// $primary-invert: $pink-invert;
+// $menu-label-color: #ff8080;
+// $text-light: yellow;
+// // 4. Import the rest of Bulma
+
+body {
+  .center {
+    display: flex;
+    justify-content: center; //horizonal center
+    align-items: center; //vertical center
+  }
+
+  button {
+    display: table;
+    margin: 0 auto;
+  }
+
+  height: 110vh;
+
+  .game {
+    height: 30vh;
+    //   margin: 0 auto;
+    .color {
+      margin: 1vw;
+      background-color: green;
+      transition: background-color 0.5s linear;
+
+      &:hover {
+        background-color: lighten(green, 40%);
+      }
+    }
+  }
+}
+
+//  background:linear-gradient(to bottom, #ff8a00, #da1b60)
+
+// DESIGN SCROLL BAR - START
+html::-webkit-scrollbar {
+  width: 0.8rem;
+  height: 0.5rem;
+}
+html::-webkit-scrollbar-thumb {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#ff8a00),
+    to(#da1b60)
+  );
+  background: linear-gradient(to bottom, #ff8a00, #da1b60);
+  border-radius: 30px;
+  -webkit-box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.4),
+    inset -2px -2px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.4),
+    inset -2px -2px 2px rgba(0, 0, 0, 0.4);
+}
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+// DESIGN SCROLL BAR - END

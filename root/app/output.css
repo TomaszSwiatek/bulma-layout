@@ -1,0 +1,33 @@
+body {
+  height: 110vh; }
+  body .center {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  body button {
+    display: table;
+    margin: 0 auto; }
+  body .game {
+    height: 30vh; }
+    body .game .color {
+      margin: 1vw;
+      background-color: green;
+      transition: background-color 0.5s linear; }
+      body .game .color:hover {
+        background-color: #4dff4d; }
+
+html::-webkit-scrollbar {
+  width: 0.8rem;
+  height: 0.5rem; }
+
+html::-webkit-scrollbar-thumb {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff8a00), to(#da1b60));
+  background: linear-gradient(to bottom, #ff8a00, #da1b60);
+  border-radius: 30px;
+  -webkit-box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.4); }
+
+html::-webkit-scrollbar-track {
+  background: transparent; }
+
+/*# sourceMappingURL=output.css.map */

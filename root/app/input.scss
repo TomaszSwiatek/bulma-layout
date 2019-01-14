@@ -33,11 +33,11 @@ body {
     justify-content: center; //horizonal center
     align-items: center; //vertical center
   }
-
-  button {
-    display: table;
-    margin: 0 auto;
-  }
+  // trick to do button an display-block element. you don't have to wrap in each time div class="block" container.
+  // .button-block {
+  //   display: table;
+  //   margin: 0 auto;
+  // }
 
   height: 110vh;
 
@@ -50,7 +50,7 @@ body {
       transition: background-color 0.5s linear;
 
       &:hover {
-        background-color: lighten(green, 40%);
+        background-color: lighten(green, 30%);
       }
     }
   }

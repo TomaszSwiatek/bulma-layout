@@ -4,9 +4,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center; }
-  body button {
-    display: table;
-    margin: 0 auto; }
   body .game {
     height: 30vh; }
     body .game .color {
@@ -14,7 +11,7 @@ body {
       background-color: green;
       transition: background-color 0.5s linear; }
       body .game .color:hover {
-        background-color: #4dff4d; }
+        background-color: #1aff1a; }
 
 html::-webkit-scrollbar {
   width: 0.8rem;

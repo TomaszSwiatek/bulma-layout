@@ -26,34 +26,48 @@
 // $menu-label-color: #ff8080;
 // $text-light: yellow;
 // // 4. Import the rest of Bulma
-
 body {
-  .center {
-    display: flex;
-    justify-content: center; //horizonal center
-    align-items: center; //vertical center
-  }
-  // trick to do button an display-block element. you don't have to wrap in each time div class="block" container.
-  // .button-block {
-  //   display: table;
-  //   margin: 0 auto;
-  // }
-
-  height: 110vh;
-
-  .game {
-    height: 30vh;
-    //   margin: 0 auto;
-    .color {
-      margin: 1vw;
-      background-color: green;
-      transition: background-color 0.5s linear;
-
-      &:hover {
-        background-color: lighten(green, 30%);
-      }
+  font-family: "Open Sans", sans-serif;
+}
+ul {
+  text-indent: 2rem;
+  li {
+    &::before {
+      content: "- ";
     }
   }
+}
+.center {
+  display: flex;
+  justify-content: center; //horizonal center
+  // align-items: center; //vertical center
+  // flex-direction: column;
+}
+
+.center-vertical {
+  display: flex;
+  // justify-content: center; //horizonal center
+  align-items: center; //vertical center
+  flex-direction: column;
+}
+// trick to do button an display-block element. you don't have to wrap in each time div class="block" container.
+// .button-block {
+//   display: table;
+//   margin: 0 auto;
+// }
+.column {
+  height: 12rem;
+  border-radius: 0.5rem;
+  background-color: darkorange;
+  margin: 1rem;
+}
+
+.block-margin {
+  margin: 5rem 0;
+}
+
+.field {
+  width: 40%;
 }
 
 //  background:linear-gradient(to bottom, #ff8a00, #da1b60)
@@ -82,3 +96,17 @@ html::-webkit-scrollbar-track {
   background: transparent;
 }
 // DESIGN SCROLL BAR - END
+
+//MEDIA QUERIES
+@media (max-width: 1024px) {
+  .column {
+    height: 12rem;
+    margin: 0.5rem;
+  }
+}
+// overwrite media for max width 768px
+@media (max-width: 768px) {
+  .column {
+    height: 8rem;
+  }
+}

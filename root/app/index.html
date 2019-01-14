@@ -4,11 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-    <!-- linkowane z pliku css -->
-    <!-- <link rel="stylesheet" href="styles.css" /> -->
-    <link rel="stylesheet" href="output.css" />
-    <!-- to use icons with bulma -->
+    <title>Spot machine</title>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
@@ -19,96 +15,120 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css"
     />
+    <link rel="stylesheet" href="output.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="wrap container">
-      <h1 class="title">Jednoręki bandyta</h1>
+    <div class="wrap">
+      <!-- is-medium / is-large class inside section increase padding -->
+      <!-- i should use section like a direct child of body tag -->
+      <section class="hero has-background-black ">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title is-size-1 is-size-3-touch has-text-danger">
+              Spot Machine!
+            </h1>
+            <h2 class="subtitle is-size-3 is-size-7-touch has-text-danger">
+              Try to play.
+            </h2>
+          </div>
+        </div>
+      </section>
 
-      <div class="game columns">
-        <div class="column color ">First column</div>
-        <div class="column color ">Second column</div>
-        <div class="column color ">Third column</div>
+      <section class="section is-medium">
+        <div class="columns center game">
+          <div class="column is-2 color"></div>
+          <div class="column is-2 color"></div>
+          <div class="column is-2 color"></div>
+        </div>
+      </section>
+
+      <!-- form starts -->
+
+      <form action="" class="center-vertical play">
+        <div class="field">
+          <input
+            type="number"
+            name=""
+            id="bid"
+            class="input is-danger"
+            placeholder="Enter the amount for which you will play"
+          />
+        </div>
+        <button id="start" class="button is-danger is-outlined ">Play</button>
+      </form>
+
+      <!-- end of form - input & button -->
+
+      <!-- show stats section start -->
+      <div class="container">
+        <nav class="level block-margin score ">
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading panel">Dostępne środki</p>
+              <p class="title "><span class="wallet">0</span></p>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">Ilość prób</p>
+              <p class="title "><span class="howManyTimes">0</span></p>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">Wygrałeś</p>
+              <p class="title"><span class="win">0</span></p>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">przegrałeś</p>
+              <p class="title"><span class="loss">0</span></p>
+            </div>
+          </div>
+          <div class="level-item has-text-centered">
+            <div>
+              <p class="heading">wynik</p>
+              <p class="title"><span class="result">0</span></p>
+            </div>
+          </div>
+        </nav>
       </div>
 
-      <!-- <section class="game tile is-ancestor">
-        <div class="color tile is-4"></div>
-        <div class="color tile is-4"></div>
-        <div class="color tile is-4"></div>
-      </section> -->
+      <!-- show stats section end -->
+      <!-- instruction of game start -->
 
-      <nav class="level score">
-        <div class="level-item has-text-centered">
-          <div>
-            <p class="heading">Ilość prób</p>
-            <p class="title "><span class="howManyTimes">0</span></p>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <p class="heading">Wygrałeś</p>
-            <p class="title"><span class="win">0</span></p>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <p class="heading">przegrałeś</p>
-            <p class="title"><span class="loss">0</span></p>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <p class="heading">wynik</p>
-            <p class="title"><span class="result">0</span></p>
-          </div>
-        </div>
-      </nav>
+      <div class="notification has-background-black " id="notification">
+        <button class="delete is-large " id="btn-delete-note"></button>
 
-      <section class="play">
-        <!-- wrapped divs becouse of bulma syntax -->
-        <div class="field">
-          <div class="control">
-            <p class="control has-icons-left has-icons-right">
-              <input
-                class="input is-success is-rounded is-hovered is-focused"
-                type="number"
-                placeholder="Za ile zagrasz?"
-                id="bid"
-              />
-              <span class="icon is-small is-left">
-                <i class="far fa-laugh-wink"></i>
-              </span>
-            </p>
-          </div>
-        </div>
+        <h3 class="subtitle is-size-3 is-size-5-touch has-text-danger">
+          Zasady gry
+        </h3>
 
-        <!-- <input type="number" id="bid" placeholder="" /> -->
-        <button id="start" class="button is-success is-outlined ">
-          Spróbuj!
-        </button>
-      </section>
+        <ul class="is-size-4 is-size-6-touch has-text-danger ">
+          <li>Wybierz kwotę za którą chcesz grać.</li>
+          <li>Środki jakimi dysponujesz to <span class="wallet"></span>zł.</li>
+          <li>
+            By wygrać musisz trafić wszystkie jednakowe lub wszystkie różnorodne
+            kolory. W innym przypadku przegrywasz!
+          </li>
+          <li>przyjemnej zabawy:)</li>
+        </ul>
+      </div>
 
-      <section class="panel">
-        Twoje środki przed kolejną grą wynoszą: <span class="wallet"></span>
-      </section>
-
-      <div class="notification is-success">
-        <button class="delete"></button>
-
-        <aside class="menu">
-          <h3 class="menu-label">Zasady gry</h3>
-
-          <ul class="menu-list">
-            <li>Wybierz kwotę za którą chcesz grać.</li>
-            <li>
-              Środki jakimi dysponujesz to <span class="wallet"></span>zł.
-            </li>
-            <li>
-              By wygrać musisz trafić wszystkie jednakowe lub wszystkie
-              różnorodne kolory. W innym przypadku przegrywasz!
-            </li>
-            <li>przyjemnej zabawy:)</li>
-          </ul>
-        </aside>
+      <div class="block center block-margin">
+        <a href="https://bulma.io">
+          <img
+            src="https://bulma.io/images/made-with-bulma--semiblack.png"
+            alt="Made with Bulma"
+            width="250"
+            height="50"
+          />
+        </a>
       </div>
     </div>
 
@@ -118,6 +138,7 @@
     <script src="Draw.js"></script>
     <script src="Result.js"></script>
     <script src="Game.js"></script> -->
+
     <script src="js/events.js"></script>
   </body>
 </html>

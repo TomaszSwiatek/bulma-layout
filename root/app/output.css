@@ -1,17 +1,31 @@
 body {
-  height: 110vh; }
-  body .center {
-    display: flex;
-    justify-content: center;
-    align-items: center; }
-  body .game {
-    height: 30vh; }
-    body .game .color {
-      margin: 1vw;
-      background-color: green;
-      transition: background-color 0.5s linear; }
-      body .game .color:hover {
-        background-color: #1aff1a; }
+  font-family: "Open Sans", sans-serif; }
+
+ul {
+  text-indent: 2rem; }
+  ul li::before {
+    content: "- "; }
+
+.center {
+  display: flex;
+  justify-content: center; }
+
+.center-vertical {
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+
+.column {
+  height: 12rem;
+  border-radius: 0.5rem;
+  background-color: darkorange;
+  margin: 1rem; }
+
+.block-margin {
+  margin: 5rem 0; }
+
+.field {
+  width: 40%; }
 
 html::-webkit-scrollbar {
   width: 0.8rem;
@@ -26,5 +40,13 @@ html::-webkit-scrollbar-thumb {
 
 html::-webkit-scrollbar-track {
   background: transparent; }
+
+@media (max-width: 1024px) {
+  .column {
+    height: 12rem;
+    margin: 0.5rem; } }
+@media (max-width: 768px) {
+  .column {
+    height: 8rem; } }
 
 /*# sourceMappingURL=output.css.map */
